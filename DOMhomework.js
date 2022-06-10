@@ -1,12 +1,10 @@
 // Crear un array vacío llamado 'toDoItems'
-// Tu codigo acá:
 
 var toDoItems = [];
 
 // En la página 'index.html' hay un elemento span cuyo texto es 'Aplicación creada por:'.
 // Usando querySelector seleccionar dicho span por su id ('createdBy') y luego usando innerHTML
 // agregar tu nombre al final del texto actual. Ej: 'Aplicación creada por Franco'
-// Tu código acá:
 
 var span = document.querySelector("#createdBy");
 /* <span id="createdBy">Aplicación creada por:</span>; */
@@ -23,7 +21,6 @@ span.innerHTML = span.innerHTML + " Ivan Miranda";
 
 // Eventualmente, cada elemento que genere sera un nuevo toDo
 function ToDo(description) {
-  // Tu código acá:
   this.description = description;
   this.complete = false;
 }
@@ -31,8 +28,6 @@ function ToDo(description) {
 // Agregar un método denominado 'completeToDo' al prototipo de la clase ToDo
 // No requiere ningún argumento
 // Debe setear el atributo 'complete' del ToDo en true
-
-// Tu código acá:
 
 ToDo.prototype.completeToDo = function () {
   this.complete = !this.complete;
@@ -63,8 +58,6 @@ ToDo.prototype.completeToDo = function () {
 // El index nos va a permitir colocarle una identificacion unica a cada elemento
 
 function buildToDo(todo, index) {
-  // Tu código acá:
-
   var toDoShell = document.createElement("div");
   toDoShell.className = "toDoShell";
   // <div class='toDoShell'></div>
@@ -106,10 +99,8 @@ function buildToDo(todo, index) {
 function buildToDos(toDos) {
   // toDos es un array = [toDo1, toDo2, toDo3...] --> [{description, complete}, {description, complete}, {description, complete}...]
   //                      index -> ''  -> ''
-  // Tu código acá:
-
+  
   // return toDos.map(buildToDo) --> esta manera funciona, mientras se cumpla que los 2 datos del callback del map me van a servir para la invocacion de mi funcion.
-
   return toDos.map(function (element, index) {
     return buildToDo(element, index);
     //             todo = toDo
@@ -227,22 +218,10 @@ function completeToDo(event) {
   // llamamos a esta funcion para que se muestre en pantalla el cambio
 }
 
-// **********************************************EXTRA CREDITOS:********************************************** //
-
-/*    Investigá sobre el tipo 'checkbox' del elemento input y realizar lo siguiente en la función 'buildToDo':
-        a) Crer un checkbox en la función 'buildToDo'
-        b) Asignarle como id a dicho checkbox el valor del index y quitar el id del index de toDoText
-        c) Agregarle al checkbox el 'click' event listener de completeToDo y quitárle el event listener a toDoText
-        d) Asignarle la clase 'completeCheckbox' al checkbox
-        e) Dentro del bloque 'if' de la función buildToDo, si es true, setear el atributo 'checked' en true en el checkbox
-        f) Agregar el checkbox sobre el elemento 'toDoShell'
-*/
-// ********************************************** ----------- ********************************************** //
-
-// Acá debes insertar la llamada a 'displayToDos'
+// Acá se debe insertar la llamada a 'displayToDos'
 displayToDos();
 
-// ---------------------------- NO CAMBIES NADA DE ACÁ PARA ABAJO ----------------------------- //
+
 if (typeof module !== "undefined") {
   module.exports = {
     toDoItems: toDoItems,
